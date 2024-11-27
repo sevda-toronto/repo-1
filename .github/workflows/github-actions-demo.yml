@@ -1,1 +1,17 @@
-
+name: GitHub Actions Demo
+run-name: ${{github.actor}} is testing out GitHub Actions
+on: workflow_dispatch
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "The job was triggered by ${{github.event_name}} event"
+          echo "The job is now running on ${{runner.os}} server hosted by GitHub!"
+          echo "The name of your branch is ${{github.ref}} and the name of your repository is ${{github.repository}}"
+      - name: List Files in this repository
+        run: ls ${{github.workspace}}
+      - name: Display Job Status
+        run: echo "This job status is ${{job.status}}"
+    
+    
